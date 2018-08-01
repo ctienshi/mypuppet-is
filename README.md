@@ -1,1 +1,1 @@
-#Puppet modules for WSO2 Identity Server
+#Puppet Modules for WSO2 Identity Server
