@@ -28,7 +28,7 @@ class wso2is (
 	$wso2_consent_db   = $wso2is::params::wso2_consent_db,
 
   $ports             = $wso2is::params::ports,
-	
+
 #	$hostname	         = $wso2is::params::hostname
 #	$mgt_hostname	     = $wso2is::params::mgt_hostname
 
@@ -83,18 +83,18 @@ file {"${install_path}/${template}":
 		}
 }
 
-file { "/etc/init.d/${service_name}":
-				 ensure  => present,
-				 owner   => $wso2_user,
-         group   => $wso2_group,
-	       mode    => '0755',
-	       content => template("wso2is/wso2service.erb"),
-		}
+# file { "/etc/init.d/${service_name}":
+# 				 ensure  => present,
+# 				 owner   => $wso2_user,
+#          group   => $wso2_group,
+# 	       mode    => '0755',
+# 	       content => template("wso2is/wso2service.erb"),
+# 		}
 
-	service { $service_name:
-		     ensure     => running,
-		     hasstatus  => true,
-		     hasrestart => true,
-		     enable     => true
-	}
+	# service { $service_name:
+	# 	     ensure     => running,
+	# 	     hasstatus  => true,
+	# 	     hasrestart => true,
+	# 	     enable     => true
+	# }
 }
