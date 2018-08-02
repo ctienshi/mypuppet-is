@@ -26,7 +26,7 @@ node "ip-172-31-86-223" {
     class { "::${::product_name}::custom":
         stage => 'pre'
       }
-    class { "::${::product_name}::start":
+    class { "::${::product_name}::startserver":
         stage => 'final'
       }
 }

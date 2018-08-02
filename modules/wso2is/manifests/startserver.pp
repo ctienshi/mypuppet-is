@@ -14,7 +14,7 @@
 #  limitations under the License.
 #----------------------------------------------------------------------------
 
-class wso2is::start{
+class wso2is::startserver{
 	$install_path			 = '/usr/lib/WSO2/Identity-Server/5.6.0'
 
   exec { 'start WSO2 Identity Server':
