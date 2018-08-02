@@ -18,14 +18,15 @@
 stage { 'final' : }
 stage { 'pre' : }
 Stage['main'] -> Stage['pre']
-Stage['pre']  -> Stage['final']
+Stage['pre'] -> Stage['final']
 
 node "ip-172-31-86-223" {
-    include wso2is
-    class { 'wso2is::custom':
+    class { "::${::product_name}": }
+
+    class { "::${::product_name}::custom":
         stage => 'pre'
       }
-    class { 'wso2is::start':
+    class { "::${::product_name}::start":
         stage => 'final'
       }
 }
