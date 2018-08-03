@@ -68,11 +68,11 @@ file {"${install_path}/${template}":
 }
 
 file { "/etc/init.d/${service_name}":
-	ensure  => present,
-	owner   => root,
-	group   => root,
-	mode    => '0755',
-	content => template("wso2is/wso2service.erb"),
+				ensure  => present,
+				owner   => root,
+				group   => root,
+				mode    => '0755',
+				content => template("wso2is/wso2service.erb"),
 }
 file { "/etc/systemd/system/wso2is.service":
         ensure  => present,
