@@ -99,7 +99,7 @@ class wso2is::params {
   }
 
 	$ports = {
-      offset => 0
+      offset						  => 0
   }
 
 }

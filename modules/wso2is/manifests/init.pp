@@ -18,7 +18,7 @@ class wso2is (
 	$wso2_user				 = 'ubuntu',
 	$wso2_group				 = 'ubuntu',
 	$service_name			 = 'wso2is',
-	$install_path			 = '/usr/lib/WSO2/Identity-Server/5.6.0',
+	$install_path			 = '/usr/lib/wso2/Identity-Server/5.6.0',
 
 	# Master Datasources
 	$wso2_carbon_db    = $wso2is::params::wso2_carbon_db,
@@ -42,7 +42,7 @@ if $::osfamily == 'redhat' {
         $install_provider = 'rpm'
     }
 elsif $::osfamily == 'debian' {
-        $wso2is_package   = 'wso2is-5.6.0-linux-installer-x64-5.6.0.deb'
+        $wso2is_package   = 'wso2is-linux-installer-x64-5.6.0.deb'
         $install_provider = 'dpkg'
     }
 

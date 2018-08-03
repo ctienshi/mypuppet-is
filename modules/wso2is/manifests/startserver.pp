@@ -15,7 +15,7 @@
 #----------------------------------------------------------------------------
 
 class wso2is::startserver{
-	$install_path			 = '/usr/lib/WSO2/Identity-Server/5.6.0'
+	$install_path			 = '/usr/lib/wso2/Identity-Server/5.6.0'
 
   exec { 'start WSO2 Identity Server':
     command  => "sh wso2server.sh start",
