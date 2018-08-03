@@ -15,11 +15,24 @@
 #----------------------------------------------------------------------------
 
 class wso2is::startserver{
-	$install_path			 = '/usr/lib/wso2/Identity-Server/5.6.0'
+	$install_path			 = '/usr/lib/wso2/wso2is/5.6.0'
+
+	exec { 'systemctl daemon-reload':
+    command  => "systemctl daemon-reload",
+    cwd      => "${install_path}/bin",
+    path     => '/usr/bin:/usr/sbin:/bin',
+    }
 
   exec { 'start WSO2 Identity Server':
     command  => "sh wso2server.sh start",
     cwd      => "${install_path}/bin",
     path     => '/usr/bin:/usr/sbin:/bin',
     }
+
+		# service { wso2is:
+		# 	     ensure     => running,
+		# 	     hasstatus  => true,
+		# 	     hasrestart => true,
+		# 	     enable     => true
+		# }
 }
